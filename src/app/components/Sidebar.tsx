@@ -1,10 +1,12 @@
 import SideNavigation from './SideNavigation'
 import ExchangeRate from './ExchangeRate'
+import Balance from './Balance'
 
 export default function Sidebar() {
    return (
-      <div>
+      <div className='py-12 border-r border-slate-50/[.4]'>
          <SideNavigation />
+         <Balance />
          <ExchangeRate />
       </div>
    )

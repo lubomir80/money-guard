@@ -10,5 +10,5 @@ html {
  body{
    background: linear-gradient(0deg, rgba(9,1,25,1) 1%, rgba(61,14,131,1) 32%, rgba(64,35,119,1) 63%, rgba(34,30,57,1) 92%);
    background-repeat: no-repeat;
-   /* min-height: 100dvh; */
+   letter-spacing: 0.025em;
  }

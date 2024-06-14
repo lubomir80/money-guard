@@ -2,10 +2,10 @@
 import Link from 'next/link'
 import { HomeIcon, ChartBarSquareIcon } from '@heroicons/react/24/solid'
 import { usePathname } from 'next/navigation'
+import { navLinkType } from '../utils/type'
 
 
-
-const navLinks = [
+const navLinks: navLinkType[] = [
    {
       name: "Home",
       href: "/account",
@@ -24,7 +24,7 @@ function SideNavigation() {
 
 
    return (
-      <nav className='py-12'>
+      <nav className='pb-8'>
          <ul>
             {navLinks.map(({ name, href, icon }) => {
                const activeLink = href === pathname ? "rounded-md bg-slate-50/[.1]" : " "

@@ -14,7 +14,7 @@ function Header() {
 
             <div className='flex gap-3'>
                <div>User</div> |
-               <Link href="/" className='flex items-center gap-2'>
+               <Link href="/login" className='flex items-center gap-2'>
                   <ArrowRightOnRectangleIcon className='h-5 w-5 text-primary-600' />
                   Exit
                </Link>
