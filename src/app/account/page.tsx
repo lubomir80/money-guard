@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Table } from "flowbite-react";
+
 
 interface ITableData {
    data: string,
