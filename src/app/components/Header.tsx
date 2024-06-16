@@ -1,16 +1,12 @@
 import Link from 'next/link'
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid'
-import LogoImage from "../../../public/logo.png"
-import Image from 'next/image'
+import Logo from './Logo'
 
 function Header() {
    return (
       <header className='px-8 py-6 bg-dark'>
          <div className='flex justify-between items-center max-w-7xl mx-auto'>
-            <Link href="/" className='text-lg flex flex-col items-center justify-center' >
-               <Image src={LogoImage} alt='logo' width={22} height={18} />
-               <span>Money Guard</span>
-            </Link>
+            <Logo link={true} />
 
             <div className='flex gap-3'>
                <div>User</div> |

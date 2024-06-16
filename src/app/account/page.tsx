@@ -42,11 +42,7 @@ const tableData: ITableData[] = [
 function AccountPage() {
    return (
       <div className='py-12 px-12 '>
-         <form action="">
-            <input
-               className=''
-               type="text" placeholder='Hello' name="text" />
-         </form>
+         Account
       </div>
    )
 }
