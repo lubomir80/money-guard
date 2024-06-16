@@ -2,14 +2,15 @@ import { LockClosedIcon, IdentificationIcon } from '@heroicons/react/24/solid'
 import FormContainer from '../components/forms/FormContainer';
 import Image from 'next/image';
 import LogoImg from "../../../public/logo.png"
-import Link from 'next/link';
-import OrangeBtn from '../components/OrangeBtn';
 import WhiteButton from '../components/WhiteButton';
 import OrangeButton from '../components/OrangeButton';
+
+
 
 export const metadata = {
    title: "Login",
 };
+
 
 
 function LoginPage() {
@@ -23,16 +24,16 @@ function LoginPage() {
                </div>
                <div className='flex flex-col gap-8 w-[400px]'>
                   <div className='relative'>
-                     <IdentificationIcon className='w-5 h-5 fill-white/50 absolute top-[9px] left-0' />
-                     <input className='pl-8 w-full bg-transparent border-0 border-b-2 text-stone-50 border-white/50 placeholder:text-white/50
-                     focus:border-white'
+                     <IdentificationIcon className='w-5 h-5 fill-white/50 absolute top-2 left-0' />
+                     <input className={`pl-8 p-2 w-full bg-transparent border-0 border-b-2 text-stone-50 border-white/50 placeholder:text-white/50
+                     focus:outline-none focus:shadow-outline focus:border-white  inputDarkModeOverride`}
                         type='email' name='email' placeholder='E-mail' />
                   </div>
                   <div className='relative'>
-                     <LockClosedIcon className='w-5 h-5 fill-white/50 absolute top-[9px] left-0' />
+                     <LockClosedIcon className='w-5 h-5 fill-white/50 absolute top-2 left-0' />
                      <input
-                        className='pl-8 w-full bg-transparent border-0 border-b-2 text-stone-50 border-white/50 placeholder:text-white/50
-                     focus:border-white'
+                        className={`pl-8 p-2 w-full bg-transparent border-0 border-b-2 text-stone-50 border-white/50 placeholder:text-white/50
+                     focus:outline-none focus:shadow-outline focus:border-white  inputDarkModeOverride`}
                         type='password' name='password' placeholder='Password' />
                   </div>
                </div>
@@ -41,7 +42,8 @@ function LoginPage() {
                   <OrangeButton>
                      Log in
                   </OrangeButton>
-                  <WhiteButton href="/registration" >
+                  <WhiteButton
+                     href="/registration" >
                      Register
                   </WhiteButton>
                </div>

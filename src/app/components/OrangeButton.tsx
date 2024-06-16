@@ -16,7 +16,8 @@ function OrangeButton({ children, type, onClick, disabled }: orangeBtnType) {
          onClick={onClick}
          disabled={disabled}
          className='p-3 font-semibold drop-shadow-3xl bg-orange uppercase text-md w-full rounded-full
-                     hover:drop-shadow-2xl hover:bg-orangeHover transition-colors disabled:bg-disable'>
+                     hover:drop-shadow-2xl hover:bg-orangeHover transition-colors disabled:bg-disable
+                     focus:outline focus:outline-offset-[3px] focus:outline-fuchsia-600'>
          {children}
       </button>
    )

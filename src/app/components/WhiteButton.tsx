@@ -16,7 +16,7 @@ function WhiteButton({ children, type, href, onClick, disabled }: whiteBtnType) 
          <Link
             href={href}
             className='p-3 drop-shadow-3xl font-semibold bg-white text-indigo uppercase text-md w-full rounded-full text-center
-            hover:drop-shadow-2xl hover:bg-white/[.9] transition-colors'>
+            hover:drop-shadow-2xl hover:bg-white/[.9] transition-colors focus:outline focus:outline-offset-[3px] focus:outline-fuchsia-600'>
             {children}
          </Link>
       )
@@ -28,7 +28,7 @@ function WhiteButton({ children, type, href, onClick, disabled }: whiteBtnType) 
          onClick={onClick}
          disabled={disabled}
          className='p-3 drop-shadow-3xl font-semibold bg-white text-indigo uppercase text-md w-full rounded-full text-center
-            hover:drop-shadow-2xl hover:bg-white/[.9] transition-colors disabled:bg-disable disabled:text-slate-50/50' >
+            hover:drop-shadow-2xl hover:bg-white/[.9] transition-colors disabled:bg-disable disabled:text-slate-50/50 focus:outline focus:outline-offset-[3px] focus:outline-fuchsia-600' >
          {children}
       </button>
    )

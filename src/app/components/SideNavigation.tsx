@@ -14,7 +14,7 @@ const navLinks: navLinkType[] = [
    {
       name: "Statistics",
       href: "/account/statistics",
-      icon: <ChartBarSquareIcon className="h-5 w-5 text-primary-600" />,
+      icon: <ChartBarSquareIcon className="h-5 w-5 text-primary-600 " />,
    },
 ]
 
@@ -27,13 +27,13 @@ function SideNavigation() {
       <nav className='pb-8'>
          <ul>
             {navLinks.map(({ name, href, icon }) => {
-               const activeLink = href === pathname ? "rounded-md bg-slate-50/[.1]" : " "
+               const activeLink = href === pathname ? "rounded-md bg-slate-50/[.1] [&_svg]:fill-[#734AEF]" : " "
                const activeIcon = href === pathname ? "bg-indigo-800" : " "
 
                return (
                   <li className={`${activeLink} p-4 text-xl`}>
-                     <Link href={href} className='flex items-center gap-4'>
-                        <span className={`${activeIcon} rounded-sm p-2`} >{icon}</span>
+                     <Link href={href} className='flex items-center gap-4 '>
+                        <span className={`${activeIcon} rounded-sm p-2`}>{icon}</span>
                         <span>{name}</span>
                      </Link>
                   </li>)
