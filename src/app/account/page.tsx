@@ -1,5 +1,8 @@
 "use client"
-import React from 'react'
+
+import Modal from "../components/Modal"
+import WhiteButton from "../components/WhiteButton"
+import useOpenModalHook from "../hook/useOpenModalHook"
 
 
 interface ITableData {
@@ -9,7 +12,6 @@ interface ITableData {
    comment: string
    sum: number
 }
-
 const tableData: ITableData[] = [
    {
       data: "04.01.23",
@@ -36,13 +38,22 @@ const tableData: ITableData[] = [
 
 ]
 
-
-
-
 function AccountPage() {
+   const { onOpen, onClose, isOpen } = useOpenModalHook()
+
    return (
       <div className='py-12 px-12 '>
-         Account
+         <WhiteButton onClick={onOpen}>
+            Open Modal
+         </WhiteButton>
+
+         {isOpen &&
+            (<Modal
+               handleClose={onClose}
+               isOpen={isOpen}>
+               Test
+            </Modal>)
+         }
       </div>
    )
 }

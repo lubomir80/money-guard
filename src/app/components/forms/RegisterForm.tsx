@@ -10,6 +10,7 @@ import { TRegistrationSchema, registrationSchema } from '@/app/utils/type';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+
 function RegisterForm() {
    const {
       register,
@@ -23,7 +24,6 @@ function RegisterForm() {
       await new Promise(resolve => setTimeout(resolve, 1000))
       reset()
    }
-
 
 
    return (
@@ -65,9 +65,9 @@ function RegisterForm() {
             <div className='flex flex-col gap-6 items-center w-72'>
                {!isSubmitting ?
                   <>
-                     <OrangeButton>Log in</OrangeButton>
-                     <WhiteButton href="/registration" >
-                        Register
+                     <OrangeButton>Register</OrangeButton>
+                     <WhiteButton href="/login" >
+                        Log in
                      </WhiteButton>
                   </>
                   : <Spinner />}
