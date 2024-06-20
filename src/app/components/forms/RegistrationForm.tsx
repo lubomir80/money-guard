@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation'
-import { LockClosedIcon, IdentificationIcon } from '@heroicons/react/24/solid'
+import { LockClosedIcon, IdentificationIcon, UserIcon } from '@heroicons/react/24/solid'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,20 +12,22 @@ import {
 } from "@/components/ui/form"
 import { useForm, type FieldValues } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { TSignUpSchema, signUpSchema } from "@/app/lib/type/type"
+import { TRegistrationUpSchema, registrationUpSchema } from "@/app/lib/type/type"
 import FormContainer from "./FormContainer"
 import Logo from "../Logo"
 
 
 
-function LoginForm() {
+function RegistrationForm() {
    const router = useRouter()
 
-   const form = useForm<TSignUpSchema>({
-      resolver: zodResolver(signUpSchema),
+   const form = useForm<TRegistrationUpSchema>({
+      resolver: zodResolver(registrationUpSchema),
       defaultValues: {
+         name: "",
          email: "",
          password: "",
+         passwordConfirm: "",
       }
    })
 
@@ -43,6 +45,20 @@ function LoginForm() {
                onSubmit={form.handleSubmit(handlerSubmit)}>
                <Logo />
                <div className="min-w-[380px] flex flex-col gap-8">
+                  <FormField
+                     control={form.control} name="name"
+                     render={({ field }) => {
+                        return <FormItem className='relative'>
+                           <UserIcon className='w-5 h-5 fill-white/50 absolute top-4 left-0' />
+                           <FormControl>
+                              <Input
+                                 {...field}
+                                 className="" placeholder="Name" />
+                           </FormControl>
+                           <FormMessage />
+                        </FormItem>
+                     }}
+                  />
                   <FormField control={form.control} name="email"
                      render={({ field }) => {
                         return <FormItem className='relative'>
@@ -70,14 +86,29 @@ function LoginForm() {
                         </FormItem>
                      }}
                   />
+                  <FormField
+                     control={form.control} name="passwordConfirm"
+                     render={({ field }) => {
+                        return <FormItem className='relative'>
+                           <LockClosedIcon className='w-5 h-5 fill-white/50 absolute top-4 left-0' />
+                           <FormControl>
+                              <Input
+                                 {...field}
+                                 className="" placeholder="Confirm Password" />
+                           </FormControl>
+                           <FormMessage />
+                        </FormItem>
+                     }}
+                  />
+
                </div>
                <div className="min-w-[300px] flex flex-col gap-6">
-                  <Button type="submit">Log in</Button>
+                  <Button type="submit">Registration</Button>
                   <Button
-                     onClick={() => router.push('/registration')}
+                     onClick={() => router.push('/login')}
                      variant="secondary"
                      type="button">
-                     Registration
+                     Log In
                   </Button>
                </div>
             </form>
@@ -86,4 +117,4 @@ function LoginForm() {
    )
 }
 
-export default LoginForm
+export default RegistrationForm

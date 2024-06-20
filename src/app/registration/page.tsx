@@ -4,6 +4,7 @@ import Image from 'next/image';
 import LogoImg from "../../../public/logo.png"
 import WhiteButton from '../components/WhiteButton';
 import OrangeButton from '../components/OrangeButton';
+import RegistrationForm from '../components/forms/RegistrationForm';
 
 export const metadata = {
    title: "Create account",
@@ -12,7 +13,7 @@ export const metadata = {
 function RegistrationPage() {
    return (
       <div className='justify-center items-center flex'>
-         <FormContainer>
+         {/* <FormContainer>
             <form className='flex flex-col gap-12 items-center'>
                <div className='flex flex-col items-center'>
                   <Image src={LogoImg} alt="logo" width={25} height={35} />
@@ -59,7 +60,8 @@ function RegistrationPage() {
                </div>
 
             </form>
-         </FormContainer>
+         </FormContainer> */}
+         <RegistrationForm />
       </div>
    )
 }
