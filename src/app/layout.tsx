@@ -22,7 +22,7 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={`${josefin.className} text-slate-50
-         min-h-screen flex relative`}>
+         min-h-screen flex relative bg-dark`}>
             <main className='max-w-7xl mx-auto w-full grid'>
                {children}
             </main>

@@ -1,11 +1,17 @@
 import { childrenProps } from "@/app/utils/type"
+import { cn } from "@/lib/utils"
+
+type containerProps = childrenProps & {
+   className?: string
+}
 
 
-
-function FormContainer({ children }: childrenProps) {
+function FormContainer({ children, className }: containerProps) {
    return (
-      <div className="max-w-[533px] max-h-[630px] bg-white/[.1]
-      px-12 py-14 rounded-md">
+      <div className={
+         cn("max-w-[533px] bg-white/[.1] px-12 py-14 rounded-md",
+            className
+         )}>
          {children}
       </div>
    )
