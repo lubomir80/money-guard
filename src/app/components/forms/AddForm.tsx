@@ -22,14 +22,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 
 function AddForm() {
-   let defaultDate = new Date()
 
 
    const initialState = {
       type: false,
       categories: "",
       sum: 0,
-      date: new Date(),
+      date: "26/04/2024",
       comment: "",
    }
 
