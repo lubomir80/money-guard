@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import AddForm from '../components/forms/AddForm'
 
 
 interface ITableData {
@@ -42,11 +43,7 @@ const tableData: ITableData[] = [
 function AccountPage() {
    return (
       <div className='py-12 px-12 '>
-         <form action="">
-            <input
-               className=''
-               type="text" placeholder='Hello' name="text" />
-         </form>
+         <AddForm />
       </div>
    )
 }

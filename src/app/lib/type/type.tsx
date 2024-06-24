@@ -26,3 +26,27 @@ export const registrationUpSchema =
    })
 
 export type TRegistrationUpSchema = z.infer<typeof registrationUpSchema>
+
+
+export const addTransactionSchema =
+   z.object({
+      type: z.boolean(),
+      categories: z.string().optional(),
+      sum: z.coerce.number().positive(),
+      date: z.string(),
+      comment: z.string(),
+   }).refine(
+      (data) => {
+         if (data.type) {
+            console.log(data.type);
+            return !!data.categories
+         }
+         return true
+      },
+      {
+         message: "Category is required",
+         path: ["categories"]
+      }
+   );
+
+export type TAddTransaction = z.infer<typeof addTransactionSchema>
