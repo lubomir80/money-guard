@@ -30,23 +30,19 @@ const config = {
          colors: {
             "indigo": "rgba(82, 59, 126, 0.6)",
             "coral": "rgba(255, 134, 141, 1)",
+            "lightIndigo": "rgba(34, 13, 91, 0.23)"
          },
          dropShadow: {
             '3xl': '1px 9px 15px rgba(0,0,0,0.25) ',
          },
          keyframes: {
-            "accordion-down": {
-               from: { height: "0" },
-               to: { height: "var(--radix-accordion-content-height)" },
-            },
-            "accordion-up": {
-               from: { height: "var(--radix-accordion-content-height)" },
-               to: { height: "0" },
+            appear: {
+               "0%": { opacity: "0", transform: "translateY(0.5rem)" },
+               "100%": { opacity: "1", transform: "translateY(0%)" }
             },
          },
          animation: {
-            "accordion-down": "accordion-down 0.2s ease-out",
-            "accordion-up": "accordion-up 0.2s ease-out",
+            appear: "appear .8s ease-in-out",
          },
       },
    },

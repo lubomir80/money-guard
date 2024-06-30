@@ -1,6 +1,6 @@
 import { TAddTransaction } from '@/app/lib/type/type'
-import { FormControl, FormField, FormItem } from '@/components/ui/form'
-import { Switch } from '@/components/ui/switch'
+import { FormControl, FormField, FormItem } from '@/app/components/ui/form'
+import { Switch } from '@/app/components/ui/switch'
 import type { Control } from "react-hook-form"
 
 

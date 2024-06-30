@@ -1,49 +1,20 @@
-"use client"
-import React from 'react'
-import AddForm from '../components/forms/AddForm'
 
-
-interface ITableData {
-   data: string,
-   type: boolean,
-   category: string,
-   comment: string
-   sum: number
-}
-
-const tableData: ITableData[] = [
-   {
-      data: "04.01.23",
-      type: false,
-      category: "04.01.23",
-      comment: "04.01.23",
-      sum: 300
-   },
-   {
-      data: "05.01.23",
-      type: true,
-      category: "Income",
-      comment: "January bonus",
-      sum: 8000
-   },
-   {
-      data: "07.01.23",
-      type: false,
-      category: "Car",
-      comment: "Oil",
-      sum: 1000
-   },
-
-
-]
-
-
+import Modal from "../components/Modal"
+import AddForm from "../components/forms/AddForm"
+import EditForm from "../components/forms/EditForm"
 
 
 function AccountPage() {
+
+
+
    return (
       <div className='py-12 px-12 '>
-         <AddForm />
+         <div>
+            <Modal>
+               <AddForm />
+            </Modal>
+         </div>
       </div>
    )
 }

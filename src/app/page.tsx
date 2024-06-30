@@ -11,7 +11,7 @@ export default function Home() {
 
 
    return (
-      <div className="py-12 px-12">
+      <div className="transition-all py-12 px-12">
          Home
       </div>
    );

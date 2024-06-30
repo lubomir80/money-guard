@@ -50,3 +50,26 @@ export const addTransactionSchema =
    );
 
 export type TAddTransaction = z.infer<typeof addTransactionSchema>
+
+
+export const editTransactionSchema =
+   z.object({
+      type: z.boolean(),
+      categories: z.string().optional(),
+      sum: z.coerce.number().positive(),
+      date: z.string(),
+      comment: z.string(),
+   }).refine(
+      (data) => {
+         if (data.type) {
+            return !!data.categories
+         }
+         return true
+      },
+      {
+         message: "Category is required",
+         path: ["categories"]
+      }
+   );
+
+export type TEditTransaction = z.infer<typeof editTransactionSchema>
